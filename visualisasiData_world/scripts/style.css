@@ -1,0 +1,177 @@
+/* ==================== ROOT COLOR VARIABLES ==================== */
+:root {
+  --bg: #0b1220;
+  --panel: #071022;
+  --muted: #9fb0c9;
+  --accent: #60a5fa;
+  --accent-2: #facc15;
+}
+
+/* ==================== GLOBAL ==================== */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", system-ui, Segoe UI, Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg, var(--bg), #061226);
+  color: #cbd5e1;
+}
+
+/* ==================== HEADER ==================== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background-color: #1e293b;
+  padding: 12px 18px;
+  border-radius: 8px;
+  color: var(--accent);
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0;
+  color: var(--accent);
+}
+
+.subtitle {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ==================== APP LAYOUT ==================== */
+.app {
+  max-width: 1200px;
+  margin: 18px auto;
+  padding: 18px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 460px;
+  gap: 14px;
+}
+
+.panel {
+  background: var(--panel);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+}
+
+#map {
+  height: 520px;
+}
+
+#scatter {
+  height: 480px;
+}
+
+#line {
+  height: 260px;
+  margin-top: 12px;
+}
+
+/* ==================== CONTROLS ==================== */
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 14px 0;
+  background-color: #1e293b;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.ctrl {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+input[type="range"] {
+  width: 220px;
+}
+
+select,
+button,
+input {
+  background: transparent;
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+button {
+  cursor: pointer;
+  background: linear-gradient(180deg, var(--accent), #2563eb);
+  color: white;
+  border: none;
+}
+
+button.secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--muted);
+}
+
+#info {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ==================== INFO BOX & TOOLTIP ==================== */
+.info-box {
+  max-width: 900px;
+  margin: 12px auto;
+  background-color: #1e293b;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(14, 22, 32, 0.95);
+  color: #e6f0ff;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+  border: 1px solid var(--accent);
+  z-index: 10;
+}
+
+/* ==================== COLOR BAR ==================== */
+.colorbar {
+  height: 10px;
+  border-radius: 6px;
+  margin: 8px 0;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
